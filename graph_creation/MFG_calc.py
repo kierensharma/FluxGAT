@@ -134,7 +134,7 @@ def main():
 
     # Save the MFG results
     try:
-        with open('MFG.pkl', 'wb') as f:
+        with open('../data/MFG.pkl', 'wb') as f:
             pickle.dump(M, f)
     except Exception as e:
         print(f"Error saving MFG results: {e}")
