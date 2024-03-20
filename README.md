@@ -65,7 +65,7 @@ Next, navigate to the 'model' directory from the project root, where the 'FluxGA
 cd model
 python FluxGAT.py
 ```
-**Expected Output:** The FluxGAT.py script trains the model on each fold's training data and evaluates its performance on the testing data. The results, including accuracy and loss metrics for each fold, are printed to the console. Ensure that the training process completes successfully and review the output metrics to assess the model's performance.
+**Expected Output:** The FluxGAT.py script trains the model on each fold's training data and evaluates its performance on the testing data. The results, including accuracy and loss metrics for each fold, are printed to the console or saved to an output file (e.g., FluxGAT_predictions.pkl). Ensure that the training process completes successfully and review the output metrics to assess the model's performance.
 
 ## Contributing
 Contributions to improve FluxGAT are welcome. If you have suggestions or enhancements, please open an issue first to discuss what you would like to change. For substantial changes, please open a pull request for review.
