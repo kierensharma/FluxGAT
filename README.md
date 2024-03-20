@@ -25,8 +25,24 @@ This step involves running the 'flux_sampling.py' script to perform flux samplin
 cd sampling
 python flux_sampling.py
 ```
-
 Expected Output: The script saves the flux sampling data to the data directory. Please verify that the output file(s) are correctly generated in the specified location before proceeding.
+
+### Step 2: Graph Creation
+After completing flux sampling, the next step is to create the graph data structure required for training the FluxGAT model. This involves processing the flux sampling data to calculate a mass flow graph (MFG), node features, and node labels. Three scripts located in a 'graph_creation' directory from the project root are responsible for these tasks:
+
+- MFG_calc.py: Calculates a Mass Flow Graph (MFG) based on the flux sampling data.
+- node_features.py: Generates node features from reactant and product information contained within the GSMM.
+- node_labels.py: Uses the gene protein reaction (GRP) rules within the GSMM to map gene essentiality to reaction (node) essentiality. 
+
+**Running the Scripts:**
+These scripts can be run in any order and are located in a directory named graph_creation. Navigate to this directory and execute each script as follows:
+```bash
+cd graph_creation
+python MFG_calc.py
+python node_features.py
+python node_labels.py
+```
+**Expected Output:** Each script will produce data files necessary for constructing the graph. These files are typically saved in the 'data' directory. Ensure that all the output files are generated before moving to the next step.
 
 ## Contributing
 Contributions to improve FluxGAT are welcome. If you have suggestions or enhancements, please open an issue first to discuss what you would like to change. For substantial changes, please open a pull request for review.
