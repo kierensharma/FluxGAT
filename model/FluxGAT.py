@@ -118,7 +118,6 @@ def main():
             model = FluxGAT(num_features=data.x.size(1), hidden_channels=150, embedding_dim=300, heads=2, num_layers=2).to(device)
             optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, weight_decay=0.001)
             
-            # Adjusting for class imbalance
             number_of_zeros = (data.y == 0).sum()
             number_of_ones = (data.y == 1).sum()
             weight = torch.tensor([number_of_zeros / number_of_ones])
@@ -134,7 +133,6 @@ def main():
 
             fold_metrics.append((test_acc, test_f1))
 
-        # Calculate average metrics across folds for this repeat
         avg_metrics = np.mean(fold_metrics, axis=0)
         print(f'Average Test Accuracy: {avg_metrics[0]:.4f}, Average Test F1: {avg_metrics[1]:.4f}')
 
