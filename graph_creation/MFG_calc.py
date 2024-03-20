@@ -8,7 +8,7 @@ def stoichiometry_calc(model):
     Calculate the stoichiometry matrix of a given metabolic model.
 
     Parameters:
-    model (cobra.Model): The metabolic model to calculate the stoichiometry for.
+    model (cobra.Model): The metabolic model to extract the stoichiometry from.
 
     Returns:
     pandas.DataFrame: A DataFrame representing the stoichiometric matrix of the model.
@@ -52,7 +52,7 @@ def reversibility_calc(model):
 def MFG_calc(S, r, v):
     """
     Calculate the mass flow graph (MFG) based on stoichiometry matrix (S),
-    reversibility vector (r), and flux vector (v). This implementation is based on the methods 
+    reversibility vector (r), and flux sampling vector (v). This implementation is based on the methods 
     described in the following research paper:
     
     Beguerisse-Díaz, M., Bosque, G., Oyarzún, D. et al. Flux-dependent graphs for metabolic networks. 
@@ -61,62 +61,51 @@ def MFG_calc(S, r, v):
     Parameters:
     S (numpy.ndarray): Stoichiometry matrix.
     r (numpy.ndarray): Vector indicating the reversibility of reactions (1 for reversible, 0 for irreversible).
-    v (numpy.ndarray): Flux vector.
+    v (numpy.ndarray): Flux sampling vector.
 
     Returns:
     numpy.ndarray: The result of the MFG calculation.
     """
-    # Replace NaN values in S with 0
     S = np.nan_to_num(S)
 
-    # Construct identity and diagonal matrices
     I = np.eye(S.shape[1])
     D = np.diag(r)
 
-    # Construct block matrices A and B
     A = np.block([[I, np.zeros((S.shape[1], S.shape[1]))], 
                   [np.zeros((S.shape[1], S.shape[1])), D]])
 
     B = np.block([S, -S])
 
-    # Compute S_2m and its forward and reverse components
     S_2m = B.dot(A)
     S_plus_2m = (np.abs(S_2m) + S_2m) / 2
     S_minus_2m = (np.abs(S_2m) - S_2m) / 2
 
-    # Calculate W_plus and W_minus
     W_plus = np.linalg.pinv(np.diag(S_plus_2m.dot(np.ones(2*S.shape[1]))))
     W_minus = np.linalg.pinv(np.diag(S_minus_2m.dot(np.ones(2*S.shape[1]))))
 
-    # Process flux vector v
     abs_v = np.abs(v)
     matrix1 = (abs_v + v) / 2
     matrix2 = (abs_v - v) / 2
     v_2m = np.vstack((matrix1, matrix2)).flatten()
 
-    # Construct V, J, and J_pinv matrices
     V = np.diag(v_2m)
     j = S_plus_2m.dot(v_2m)
     J = np.diag(j)
     J_pinv = np.linalg.pinv(J)
 
-    # MFG calculation
     return np.dot(np.dot(np.transpose(S_plus_2m.dot(V)), J_pinv), S_minus_2m.dot(V))
 
 def main():
     try:
-        # Load the metabolic model
         model = cobra.io.read_sbml_model("../data/iCHO2291.xml")
     except Exception as e:
         print(f"Error loading model: {e}")
         return
 
-    # Perform calculations based on the model
     S = stoichiometry_calc(model)
     r = reversibility_calc(model)
 
     try:
-        # Load and process flux data
         flux_df = pd.read_pickle('../data/flux_sampling.pkl')
     except Exception as e:
         print(f"Error loading flux data: {e}")
@@ -129,10 +118,8 @@ def main():
     
     v = flux_df.loc['Mean'].to_numpy().astype(float)
 
-    # Calculate the MFG
     M = MFG_calc(S, r, v)
 
-    # Save the MFG results
     try:
         with open('../data/MFG.pkl', 'wb') as f:
             pickle.dump(M, f)
