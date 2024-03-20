@@ -24,3 +24,10 @@ This command executes the main script, which will preprocess the data, train the
 Contributions to improve FluxGAT are welcome. If you have suggestions or enhancements, please open an issue first to discuss what you would like to change. For substantial changes, please open a pull request for review.
 
 Ensure to update tests as appropriate and maintain the anonymity of the repository.
+
+## Acknowledgments
+
+This project builds upon the foundational work in flux sampling methodologies and graph neural network architectures. We extend our gratitude to the researchers and developers whose contributions have made this project possible.
+
+## Contact Information
+For any inquiries, suggestions, or contributions, please open an issue in this repository, and we will get back to you as soon as possible.
