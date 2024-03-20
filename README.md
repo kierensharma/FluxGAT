@@ -13,7 +13,11 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-To train and evaluate the FluxGAT model, follow the outlined steps sequentially. Make sure to complete each step successfully before moving on to the next.
+Below is the workflow diagram to help understand the different steps involved in the process:
+
+![Workflow Diagram](docs/FluxGAT_architecture.pdf)
+
+Follow the steps below in order. Ensure each script completes successfully before proceeding to the next.
 
 ### Step 1: Flux Sampling
 This step involves running the 'flux_sampling.py' script to perform flux sampling on the genome-scale metabolic model (GSMM). The script will generate flux sampling data, which is essential for subsequent steps in the analysis.
