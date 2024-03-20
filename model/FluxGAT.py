@@ -101,7 +101,7 @@ def test(model, data):
 def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    df = pd.read_pickle('../data/k_fold_masking.pkl')
+    df = pd.read_pickle('../data/k_fold_masks.pkl')
     dataset = GraphDataset(df)
 
     num_repeats = 5

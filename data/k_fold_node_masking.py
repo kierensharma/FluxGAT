@@ -76,7 +76,7 @@ def main():
             dict_df['test_mask'].append(test_mask)
 
         df = pd.DataFrame(dict_df)
-        df.to_pickle('../data/k_fold_masking.pkl')
+        df.to_pickle('../data/k_fold_masks.pkl')
     except Exception as e:
         print(f"An error occurred: {e}")
 
