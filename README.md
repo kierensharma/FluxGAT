@@ -13,12 +13,20 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-After successfully installing the necessary dependencies, you can run the FluxGAT model with the following command from the root directory of the project:
+To train and evaluate the FluxGAT model, follow the outlined steps sequentially. Make sure to complete each step successfully before moving on to the next.
 
+### Step 1: Flux Sampling
+This step involves running the 'flux_sampling.py' script to perform flux sampling on the genome-scale metabolic model (GSMM). The script will generate flux sampling data, which is essential for subsequent steps in the analysis.
+
+**Location:** Begin by navigating to the 'sampling' directory within your project's root folder.
+
+**Command:**
 ```bash
-python main.py
+cd sampling
+python flux_sampling.py
 ```
-This command executes the main script, which will preprocess the data, train the FluxGAT model, and output the gene essentiality classification results.
+
+Expected Output: The script saves the flux sampling data to the data directory. Please verify that the output file(s) are correctly generated in the specified location before proceeding.
 
 ## Contributing
 Contributions to improve FluxGAT are welcome. If you have suggestions or enhancements, please open an issue first to discuss what you would like to change. For substantial changes, please open a pull request for review.
