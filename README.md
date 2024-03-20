@@ -51,7 +51,7 @@ python node_labels.py
 ### Step 3: FluxGAT Training and Testing
 This step involves training and testing the FluxGAT model with k-fold cross-validation to ensure its accuracy and robustness. This process is divided into two main tasks: generating k-fold masks and running the training/testing cycle.
 
-**Task 1: Generating K-Fold Masks**
+**Generating K-Fold Masks:**
 First, navigate to the data directory from the project root. Here, you'll run the 'k_fold_node_masking.py' script, which prepares the dataset for k-fold cross-validation by creating masks for training and testing phases.
 ```bash
 cd data
@@ -59,7 +59,7 @@ python k_fold_node_masking.py
 ```
 **Expected Output:** This script produces a DataFrame containing the k-fold masks for the graph data, which are used to segment the data into training and testing sets for each fold of the validation process. The output is typically saved in a file (e.g., k_fold_masks.pkl) within the same data directory. Verify that this file is created before proceeding.
 
-**Task 2: Running FluxGAT Training and Testing**
+**Running FluxGAT Training and Testing:**
 Next, navigate to the 'model' directory from the project root, where the 'FluxGAT.py' script resides. This script utilises the k-fold masks generated in the previous step to perform k-fold cross-validation on the FluxGAT model.
 ```bash
 cd model
