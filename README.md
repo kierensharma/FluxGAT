@@ -15,7 +15,7 @@ pip install -r requirements.txt
 ## Usage
 Below is the workflow diagram to help understand the different steps involved in the process:
 
-![Workflow Diagram](docs/FluxGAT_architecture.pdf)
+![Workflow Diagram](docs/FluxGAT_architecture.png)
 
 Follow the steps below in order. Ensure each script completes successfully before proceeding to the next.
 
