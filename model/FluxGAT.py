@@ -115,7 +115,7 @@ def main():
             print(f'  Fold {fold + 1}:')
             data = data.to(device)
             model = FluxGAT(num_features=data.x.size(1), hidden_channels=150, embedding_dim=300, heads=2, num_layers=2).to(device)
-            optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, weight_decay=0.001)
+            optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, weight_decay=0.01)
             
             number_of_zeros = (data.y == 0).sum()
             number_of_ones = (data.y == 1).sum()
