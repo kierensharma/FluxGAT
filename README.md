@@ -82,15 +82,15 @@ For any inquiries, suggestions, or contributions, please open an issue in this r
 ## Citation
 Please cite the following paper if you use FluxGAT in your research:
 
-@article{name2024fluxgat,
-title={FluxGAT: Integrating Flux Sampling with Graph Neural Networks for Unbiased Gene Essentiality Classification},
-author={Author, A. and Contributor, B.},
-journal={Journal of Computational Biology},
-volume={xx},
-number={xx},
-pages={xx-xx},
-year={2024},
-publisher={Famous Academic Publisher}
+```bibtex
+@article{sharma2024fluxgat,
+  title={FluxGAT: Integrating Flux Sampling with Graph Neural Networks for Unbiased Gene Essentiality Classification},
+  author={Sharma, Kieren and Marucci, Lucia and Abdallah, Zahraa S},
+  journal={arXiv preprint arXiv:2403.18666},
+  year={2024}
 }
+```
+
+You can access the paper directly [here]([https://doi.org/10.xxxx/xxxxxx](https://doi.org/10.48550/arXiv.2403.18666)).
 
 Thank you for supporting our research!
