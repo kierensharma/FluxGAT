@@ -78,3 +78,19 @@ This project builds upon the foundational work in flux sampling methodologies an
 
 ## Contact Information
 For any inquiries, suggestions, or contributions, please open an issue in this repository, and we will get back to you as soon as possible.
+
+## Citation
+Please cite the following paper if you use FluxGAT in your research:
+
+@article{name2024fluxgat,
+title={FluxGAT: Integrating Flux Sampling with Graph Neural Networks for Unbiased Gene Essentiality Classification},
+author={Author, A. and Contributor, B.},
+journal={Journal of Computational Biology},
+volume={xx},
+number={xx},
+pages={xx-xx},
+year={2024},
+publisher={Famous Academic Publisher}
+}
+
+Thank you for supporting our research!
