@@ -91,6 +91,6 @@ Please cite the following paper if you use FluxGAT in your research:
 }
 ```
 
-You can access the paper directly [here]([https://doi.org/10.xxxx/xxxxxx](https://doi.org/10.48550/arXiv.2403.18666)).
+You can access the paper directly [here](https://doi.org/10.48550/arXiv.2403.18666).
 
 Thank you for supporting our research!
