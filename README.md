@@ -36,7 +36,7 @@ After completing flux sampling, the next step is to create the graph data struct
 
 - MFG_calc.py: Creates a Mass Flow Graph (MFG) based on the flux sampling data.
 - node_features.py: Generates node features from reactant and product information contained within the GSMM.
-- node_labels.py: Uses the gene protein reaction (GRP) rules within the GSMM to map gene essentiality to reaction (node) essentiality. 
+- `node_labels.py`: Uses the gene protein reaction (GRP) rules within the GSMM to map gene essentiality to reaction (node) essentiality.
 
 **Running the Scripts:**
 These scripts can be run in any order and are located in a directory named graph_creation. Navigate to this directory and execute each script as follows:
