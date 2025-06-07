@@ -25,7 +25,7 @@ def convert_to_logic_string(input_string, gene_dict):
 
 def process_logic(expression):
     """
-    Evaluates a GPR rule logis string containing 'and', 'or', and parentheses.
+    Evaluates a GPR rule logic string containing 'and', 'or', and parentheses.
 
     Parameters:
     expression (str): The logic expression string to evaluate.
@@ -60,8 +60,8 @@ def process_logic(expression):
 
 def reaction_essentiality_calc(model, gene_essentiality_lookup):
     """
-    Calculates the essentiality of reactions in a metabolic model based on GPR rules and 
-    gene essenitlaity lables.
+    Calculates the essentiality of reactions in a metabolic model based on GPR rules and
+    gene essentiality labels.
 
     Parameters:
     model (cobra.Model): The metabolic model.
