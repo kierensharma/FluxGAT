@@ -119,7 +119,7 @@ def main():
             
             number_of_zeros = (data.y == 0).sum()
             number_of_ones = (data.y == 1).sum()
-            weight = torch.tensor([number_of_zeros / number_of_ones])
+            weight = torch.tensor([number_of_zeros / number_of_ones], device=device)
             criterion = torch.nn.BCEWithLogitsLoss(pos_weight=weight)
 
             for epoch in range(num_epochs):
