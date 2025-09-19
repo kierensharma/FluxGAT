@@ -82,14 +82,13 @@ For any inquiries, suggestions, or contributions, please open an issue in this r
 ## Citation
 Please cite the following paper if you use FluxGAT in your research:
 ```bibtex
-@article{sharma2024fluxgat,
+@inproceedings{sharma2024fluxgat,
   title={FluxGAT: Integrating Flux Sampling with Graph Neural Networks for Unbiased Gene Essentiality Classification},
-  author={Sharma, Kieren and Marucci, Lucia and Abdallah, Zahraa S},
-  journal={arXiv preprint arXiv:2403.18666},
-  year={2024}
+  author={Sharma, Kieren and Abdallah, Zahraa S and Marucci, Lucia},
+  booktitle={NeurIPS 2024 Workshop on AI for New Drug Modalities}
 }
 ```
 
-You can access the paper directly [here](https://doi.org/10.48550/arXiv.2403.18666).
+You can access the paper directly [here](https://openreview.net/pdf?id=vZSkrgoI3l).
 
 Thank you for supporting our research!
