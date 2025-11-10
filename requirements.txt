@@ -1,5 +1,5 @@
 cobra==0.29.0
-keras==2.15.0
+keras==3.12.0
 networkx==2.8.8
 node2vec==0.4.6
 numpy==1.26.2
